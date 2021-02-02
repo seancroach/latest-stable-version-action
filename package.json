@@ -1,0 +1,49 @@
+{
+  "name": "latest-stable-version-action",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf build",
+    "eslint": "eslint main.ts",
+    "format": "npm run prettier:write",
+    "lint": "npm run prettier:check && npm run eslint",
+    "prepare": "tsc -p .",
+    "prettier:check": "prettier --check \"**\"",
+    "prettier:write": "prettier --write \"**\"",
+    "test": "npm run lint"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "latest-stable-version": "^1.0.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@seancroach/eslint-config-typescript": "^3.0.8",
+    "@seancroach/tsconfig": "^2.1.0",
+    "eslint": "^7.19.0",
+    "husky": "^4.3.8",
+    "prettier": "^2.2.1",
+    "prettier-plugin-package": "^1.3.0",
+    "typescript": "^4.1.3"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "@seancroach/eslint-config-typescript",
+    "parserOptions": {
+      "project": "tsconfig.json"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run prepare && npm test"
+    }
+  },
+  "prettier": {
+    "proseWrap": "never"
+  }
+}

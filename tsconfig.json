@@ -1,0 +1,8 @@
+{
+  "extends": "@seancroach/tsconfig",
+  "compilerOptions": {
+    "outDir": "build",
+    "declaration": false
+  },
+  "files": ["main.ts"]
+}

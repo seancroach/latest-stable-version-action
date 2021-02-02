@@ -1,0 +1,23 @@
+name: Get Latest Stable Version
+description: Gets the latest stable version from GitHub releases.
+author: seancroach
+
+inputs:
+  owner:
+    description: The owner of the GitHub repo.
+    required: true
+  repo:
+    description: The GitHub repository to query owned by the owner.
+    required: true
+
+outputs:
+  result:
+    description: The cleaned latest stable SemVer version.
+
+runs:
+  using: node12
+  main: build/main.js
+
+branding:
+  color: white
+  icon: github
