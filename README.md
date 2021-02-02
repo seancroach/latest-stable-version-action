@@ -6,7 +6,7 @@
 
 [![Marketplace Badge][marketplace-badge]][marketplace-url]
 
-This GitHub Action retrives the latest stable version from a GitHub repository's release tags.
+A GitHub Action that retrieves the latest stable version from a GitHub repository's release tags.
 
 ## Usage
 
