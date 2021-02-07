@@ -19,6 +19,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const child_process_1 = require("child_process");
+child_process_1.execSync(`cd ${__dirname}; npm ci`);
 const core = __importStar(require("@actions/core"));
 const latest_stable_version_1 = require("latest-stable-version");
 async function run() {

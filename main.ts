@@ -1,3 +1,6 @@
+import { execSync } from "child_process";
+execSync(`cd ${__dirname}; npm ci`);
+
 import * as core from "@actions/core";
 import { latestStableVersion } from "latest-stable-version";
 
